@@ -160,6 +160,19 @@
             transform: scale(0.95);
         }
 
+        .link-btn.disabled {
+            background: linear-gradient(135deg, #64748b, #475569);
+            cursor: not-allowed;
+            opacity: 0.7;
+            box-shadow: none;
+        }
+
+        .link-btn.disabled:hover {
+            transform: none;
+            box-shadow: none;
+            background: linear-gradient(135deg, #64748b, #475569);
+        }
+
         .badge-ai {
             background: #7c3aed;
             color: white;
@@ -169,6 +182,19 @@
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
+            display: inline-block;
+            line-height: 24px;
+            margin-right: 8px;
+        }
+
+        .badge-inactive {
+            background: #dc2626;
+            color: white;
+            border-radius: 40px;
+            padding: 0 14px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
             display: inline-block;
             line-height: 24px;
             margin-right: 8px;
@@ -288,7 +314,7 @@
                 <div class="link-info">
                     <div class="title">
                         <i>🧮</i> بازی ریاضی &amp; هوش مصنوعی
-                        <span class="badge-ai">جدید</span>
+                        <span class="badge-ai">فعال</span>
                     </div>
                     <div class="desc">یک هوش مصنوعی و بازی ریاضی کامل — سرگرمی و یادگیری</div>
                 </div>
@@ -302,7 +328,7 @@
                 <div class="link-info">
                     <div class="title">
                         <i>🖼️</i> چت متوسط + ساخت عکس ساده
-                        <span class="badge-ai">AI</span>
+                        <span class="badge-ai">فعال</span>
                     </div>
                     <div class="desc">چت‌بات هوشمند با قابلیت تولید تصویر ساده</div>
                 </div>
@@ -311,18 +337,18 @@
                 </a>
             </div>
 
-            <!-- 3. چت متوسط + ساخت کد پایتون ساده -->
+            <!-- 3. چت متوسط + ساخت کد پایتون ساده (منقضی شده) -->
             <div class="link-card">
                 <div class="link-info">
                     <div class="title">
                         <i>🐍</i> چت متوسط + ساخت کد پایتون
-                        <span class="badge-ai">کدنویس</span>
+                        <span class="badge-inactive">⏳ منقضی شده</span>
                     </div>
-                    <div class="desc">چت‌بات همراه با تولید کد پایتون ساده و کاربردی</div>
+                    <div class="desc">⏰ این سرویس به‌زودی دوباره فعال می‌شود • لطفاً صبر کنید</div>
                 </div>
-                <a href="https://ai-chat-max-v9.mh1392rad.workers.dev/" class="link-btn">
-                    🌐 بازدید
-                </a>
+                <span class="link-btn disabled">
+                    ⏳ به‌زودی
+                </span>
             </div>
 
             <!-- 4. Fancy Letter (سایت حروف خاص) -->
@@ -330,7 +356,7 @@
                 <div class="link-info">
                     <div class="title">
                         <i>✒️</i> Fancy Letter
-                        <span class="badge-ai">استایل</span>
+                        <span class="badge-ai">فعال</span>
                     </div>
                     <div class="desc">تولید حروف و متن‌های فانتزی و زیبا</div>
                 </div>
@@ -344,7 +370,7 @@
                 <div class="link-info">
                     <div class="title">
                         <i>🧠</i> چت عالی
-                        <span class="badge-ai">پیشرفته</span>
+                        <span class="badge-ai">فعال</span>
                     </div>
                     <div class="desc">چت‌بات فوق‌العاده با قابلیت‌های ویژه</div>
                 </div>
@@ -358,7 +384,7 @@
                 <div class="link-info">
                     <div class="title">
                         <i>♚</i> شطرنج حرفه‌ای
-                        <span class="badge-ai">جدید</span>
+                        <span class="badge-ai">فعال</span>
                     </div>
                     <div class="desc">🎯 با تایمر و هوش مصنوعی حرفه‌ای • سطح سخت با جستجوی عمق ۳</div>
                 </div>
@@ -372,7 +398,7 @@
                 <div class="link-info">
                     <div class="title">
                         <i>🦕</i> شبیه‌ساز دایناسور کروم
-                        <span class="badge-ai">بازی</span>
+                        <span class="badge-ai">فعال</span>
                     </div>
                     <div class="desc">🏆 بازی پرش از موانع • کلیک یا فاصله برای پریدن</div>
                 </div>
