@@ -66,11 +66,56 @@
             font-weight: 300;
         }
 
+        /* دسته‌بندی ها */
+        .categories {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .category-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            border-radius: 40px;
+            padding: 10px 22px;
+            color: #c4b5fd;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .category-btn:hover {
+            background: rgba(255, 215, 0, 0.15);
+            border-color: #fbbf24;
+            transform: translateY(-2px);
+        }
+
+        .category-btn.active {
+            background: rgba(251, 191, 36, 0.2);
+            border-color: #fbbf24;
+            color: #fde68a;
+            box-shadow: 0 0 20px rgba(251, 191, 36, 0.15);
+        }
+
+        .category-btn i {
+            margin-left: 6px;
+        }
+
+        /* لیست سایت‌ها */
         .card-grid {
             display: flex;
             flex-direction: column;
             gap: 18px;
             margin-top: 10px;
+        }
+
+        .card-grid.hidden {
+            display: none;
         }
 
         .link-card {
@@ -201,8 +246,8 @@
         }
 
         .badge-update {
-            background: #f59e0b;
-            color: #1e1b4b;
+            background: #22c55e;
+            color: white;
             border-radius: 40px;
             padding: 0 14px;
             font-size: 0.65rem;
@@ -320,6 +365,15 @@
                 width: 100%;
                 word-break: break-all;
             }
+
+            .categories {
+                gap: 8px;
+            }
+
+            .category-btn {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
@@ -333,80 +387,56 @@
             <div class="sub">✨ سایت مخصوص کانال‌مون ✨</div>
         </div>
 
-        <div class="card-grid">
+        <!-- دکمه‌های دسته‌بندی -->
+        <div class="categories">
+            <button class="category-btn active" data-category="all">
+                <i>📋</i> همه
+            </button>
+            <button class="category-btn" data-category="games">
+                <i>🎮</i> بازی‌ها
+            </button>
+            <button class="category-btn" data-category="ai">
+                <i>🤖</i> هوش مصنوعی
+            </button>
+            <button class="category-btn" data-category="tools">
+                <i>🛠️</i> ابزارها
+            </button>
+            <button class="category-btn" data-category="design">
+                <i>🎨</i> طراحی
+            </button>
+        </div>
 
-            <!-- 1. بازی ریاضی + هوش مصنوعی (در حال بروزرسانی) -->
-            <div class="link-card">
+        <!-- لیست سایت‌ها -->
+        <div class="card-grid" id="site-list">
+
+            <!-- دسته: بازی‌ها -->
+            <div class="link-card" data-category="games">
                 <div class="link-info">
                     <div class="title">
                         <i>🧮</i> بازی ریاضی &amp; هوش مصنوعی
-                        <span class="badge-update">🔄 در حال بروزرسانی</span>
+                        <span class="badge-update">✅ آپگرید شد</span>
                     </div>
-                    <div class="desc">⏳ این سایت در حال بروزرسانی است • به‌زودی با امکانات بیشتر بازمی‌گردد</div>
+                    <div class="desc">✨ با امکانات جدید و بهبود یافته • هوش مصنوعی قوی‌تر</div>
                 </div>
-                <span class="link-btn disabled">
-                    ⏳ در حال بروزرسانی
-                </span>
-            </div>
-
-            <!-- 2. چت متوسط + ساخت عکس ساده -->
-            <div class="link-card">
-                <div class="link-info">
-                    <div class="title">
-                        <i>🖼️</i> چت متوسط + ساخت عکس ساده
-                        <span class="badge-ai">فعال</span>
-                    </div>
-                    <div class="desc">چت‌بات هوشمند با قابلیت تولید تصویر ساده</div>
-                </div>
-                <a href="https://ai-chat-max-v10.mh1392rad.workers.dev/" class="link-btn">
+                <a href="https://mh1392rad-source.github.io/math-game/" class="link-btn">
                     🌐 بازدید
                 </a>
             </div>
 
-            <!-- 3. چت متوسط + ساخت کد پایتون (منقضی شده) -->
-            <div class="link-card">
+            <div class="link-card" data-category="games">
                 <div class="link-info">
                     <div class="title">
-                        <i>🐍</i> چت متوسط + ساخت کد پایتون
-                        <span class="badge-inactive">⏳ منقضی شده</span>
+                        <i>🚀</i> Math Game Pro
+                        <span class="badge-new">جدید</span>
                     </div>
-                    <div class="desc">⏰ این سرویس به‌زودی دوباره فعال می‌شود • لطفاً صبر کنید</div>
+                    <div class="desc">🏆 بازی ریاضی پیشرفته • سکه، سطح، تجربه، چالش‌های روزانه</div>
                 </div>
-                <span class="link-btn disabled">
-                    ⏳ به‌زودی
-                </span>
-            </div>
-
-            <!-- 4. Fancy Letter -->
-            <div class="link-card">
-                <div class="link-info">
-                    <div class="title">
-                        <i>✒️</i> Fancy Letter
-                        <span class="badge-ai">فعال</span>
-                    </div>
-                    <div class="desc">تولید حروف و متن‌های فانتزی و زیبا</div>
-                </div>
-                <a href="https://mh1392rad-source.github.io/fancy-letter/" class="link-btn">
+                <a href="https://mh1392rad-source.github.io/my-game/" class="link-btn">
                     🌐 بازدید
                 </a>
             </div>
 
-            <!-- 5. چت عالی (پیشرفته) -->
-            <div class="link-card">
-                <div class="link-info">
-                    <div class="title">
-                        <i>🧠</i> چت عالی
-                        <span class="badge-ai">فعال</span>
-                    </div>
-                    <div class="desc">چت‌بات فوق‌العاده با قابلیت‌های ویژه</div>
-                </div>
-                <a href="https://ai-chat-final.mh1392rad.workers.dev/" class="link-btn">
-                    🌐 بازدید
-                </a>
-            </div>
-
-            <!-- 6. شطرنج حرفه‌ای -->
-            <div class="link-card">
+            <div class="link-card" data-category="games">
                 <div class="link-info">
                     <div class="title">
                         <i>♚</i> شطرنج حرفه‌ای
@@ -419,8 +449,7 @@
                 </a>
             </div>
 
-            <!-- 7. شبیه‌ساز دایناسور کروم -->
-            <div class="link-card">
+            <div class="link-card" data-category="games">
                 <div class="link-info">
                     <div class="title">
                         <i>🦕</i> شبیه‌ساز دایناسور کروم
@@ -433,8 +462,62 @@
                 </a>
             </div>
 
-            <!-- 8. نقاشی به سه‌بعدی حرفه‌ای -->
-            <div class="link-card">
+            <!-- دسته: هوش مصنوعی -->
+            <div class="link-card" data-category="ai">
+                <div class="link-info">
+                    <div class="title">
+                        <i>🖼️</i> چت متوسط + ساخت عکس ساده
+                        <span class="badge-ai">فعال</span>
+                    </div>
+                    <div class="desc">چت‌بات هوشمند با قابلیت تولید تصویر ساده</div>
+                </div>
+                <a href="https://ai-chat-max-v10.mh1392rad.workers.dev/" class="link-btn">
+                    🌐 بازدید
+                </a>
+            </div>
+
+            <div class="link-card" data-category="ai">
+                <div class="link-info">
+                    <div class="title">
+                        <i>🐍</i> چت متوسط + ساخت کد پایتون
+                        <span class="badge-inactive">⏳ منقضی شده</span>
+                    </div>
+                    <div class="desc">⏰ این سرویس به‌زودی دوباره فعال می‌شود • لطفاً صبر کنید</div>
+                </div>
+                <span class="link-btn disabled">
+                    ⏳ به‌زودی
+                </span>
+            </div>
+
+            <div class="link-card" data-category="ai">
+                <div class="link-info">
+                    <div class="title">
+                        <i>🧠</i> چت عالی
+                        <span class="badge-ai">فعال</span>
+                    </div>
+                    <div class="desc">چت‌بات فوق‌العاده با قابلیت‌های ویژه</div>
+                </div>
+                <a href="https://ai-chat-final.mh1392rad.workers.dev/" class="link-btn">
+                    🌐 بازدید
+                </a>
+            </div>
+
+            <!-- دسته: ابزارها -->
+            <div class="link-card" data-category="tools">
+                <div class="link-info">
+                    <div class="title">
+                        <i>✒️</i> Fancy Letter
+                        <span class="badge-ai">فعال</span>
+                    </div>
+                    <div class="desc">تولید حروف و متن‌های فانتزی و زیبا</div>
+                </div>
+                <a href="https://mh1392rad-source.github.io/fancy-letter/" class="link-btn">
+                    🌐 بازدید
+                </a>
+            </div>
+
+            <!-- دسته: طراحی -->
+            <div class="link-card" data-category="design">
                 <div class="link-info">
                     <div class="title">
                         <i>🎨</i> نقاشی → سه‌بعدی حرفه‌ای
@@ -447,8 +530,7 @@
                 </a>
             </div>
 
-            <!-- 9. ساخت تصویر واقعی و جذاب -->
-            <div class="link-card">
+            <div class="link-card" data-category="design">
                 <div class="link-info">
                     <div class="title">
                         <i>✨</i> ساخت تصویر واقعی و جذاب
@@ -473,11 +555,38 @@
                 </a>
             </div>
             <div class="extra">
-                <span>📅 ۲۳ ژوئن ۲۰۲۶</span>
+                <span>📅 ۲۵ ژوئن ۲۰۲۶</span>
                 <span>💎 همه‌ی سایت‌ها در یک صفحه</span>
             </div>
         </div>
 
     </div>
+
+    <script>
+        // دسته‌بندی و فیلتر کردن
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const siteCards = document.querySelectorAll('.link-card');
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // حذف کلاس active از همه دکمه‌ها
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const category = this.dataset.category;
+
+                siteCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // نمایش همه به صورت پیش‌فرض
+        siteCards.forEach(card => card.style.display = 'flex');
+    </script>
 </body>
-    </html>
+</html>
