@@ -66,7 +66,6 @@
             font-weight: 300;
         }
 
-        /* دسته‌بندی ها */
         .categories {
             display: flex;
             gap: 12px;
@@ -106,16 +105,11 @@
             margin-left: 6px;
         }
 
-        /* لیست سایت‌ها */
         .card-grid {
             display: flex;
             flex-direction: column;
             gap: 18px;
             margin-top: 10px;
-        }
-
-        .card-grid.hidden {
-            display: none;
         }
 
         .link-card {
@@ -387,7 +381,6 @@
             <div class="sub">✨ سایت مخصوص کانال‌مون ✨</div>
         </div>
 
-        <!-- دکمه‌های دسته‌بندی -->
         <div class="categories">
             <button class="category-btn active" data-category="all">
                 <i>📋</i> همه
@@ -406,10 +399,9 @@
             </button>
         </div>
 
-        <!-- لیست سایت‌ها -->
         <div class="card-grid" id="site-list">
 
-            <!-- دسته: بازی‌ها -->
+            <!-- ===== بازی‌ها ===== -->
             <div class="link-card" data-category="games">
                 <div class="link-info">
                     <div class="title">
@@ -462,7 +454,7 @@
                 </a>
             </div>
 
-            <!-- دسته: هوش مصنوعی -->
+            <!-- ===== هوش مصنوعی ===== -->
             <div class="link-card" data-category="ai">
                 <div class="link-info">
                     <div class="title">
@@ -502,7 +494,7 @@
                 </a>
             </div>
 
-            <!-- دسته: ابزارها -->
+            <!-- ===== ابزارها ===== -->
             <div class="link-card" data-category="tools">
                 <div class="link-info">
                     <div class="title">
@@ -516,7 +508,20 @@
                 </a>
             </div>
 
-            <!-- دسته: طراحی -->
+            <div class="link-card" data-category="tools">
+                <div class="link-info">
+                    <div class="title">
+                        <i>🧩</i> سایتساز لحظه‌ای
+                        <span class="badge-new">جدید</span>
+                    </div>
+                    <div class="desc">⚡ کد HTML خود را وارد کنید، سایت را بسازید و لینک دریافت کنید</div>
+                </div>
+                <a href="https://mh1392rad-source.github.io/web/" class="link-btn">
+                    🌐 بازدید
+                </a>
+            </div>
+
+            <!-- ===== طراحی ===== -->
             <div class="link-card" data-category="design">
                 <div class="link-info">
                     <div class="title">
@@ -555,7 +560,7 @@
                 </a>
             </div>
             <div class="extra">
-                <span>📅 ۲۵ ژوئن ۲۰۲۶</span>
+                <span>📅 ۲۶ ژوئن ۲۰۲۶</span>
                 <span>💎 همه‌ی سایت‌ها در یک صفحه</span>
             </div>
         </div>
@@ -563,13 +568,11 @@
     </div>
 
     <script>
-        // دسته‌بندی و فیلتر کردن
         const categoryBtns = document.querySelectorAll('.category-btn');
         const siteCards = document.querySelectorAll('.link-card');
 
         categoryBtns.forEach(btn => {
             btn.addEventListener('click', function() {
-                // حذف کلاس active از همه دکمه‌ها
                 categoryBtns.forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
 
@@ -585,7 +588,6 @@
             });
         });
 
-        // نمایش همه به صورت پیش‌فرض
         siteCards.forEach(card => card.style.display = 'flex');
     </script>
 </body>
